@@ -10,6 +10,7 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -34,6 +35,8 @@ public class ClientesActivity extends MenuActivity {
     private TextView clientesNameAndSurnameRow;
     private TextView clientesEmailRow;
     private TextView clientesReservasRow;
+    private Button volverButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,10 +128,12 @@ public class ClientesActivity extends MenuActivity {
             clientesNameAndSurnameRow = (TextView) findViewById(R.id.cliente_name_surname_row);
             clientesEmailRow = (TextView) findViewById(R.id.cilente_email_row);
             clientesReservasRow = (TextView) findViewById(R.id.cliente_reserva_row);
+            volverButton = (Button) findViewById(R.id.volverButton);
 
             clientesNameAndSurnameRow.setText(handler.getNombreYApellidos(SessionHandler.getSessionEmail()));
             clientesEmailRow.setText(SessionHandler.getSessionEmail());
             clientesReservasRow.setText(handler.tieneReservaActiva(handler.getId(SessionHandler.getSessionEmail())) ? "Tienes " : "No tienes " + "reservas activas.");
+            volverButton.setOnClickListener(l -> finish());
 
         } else {
             setContentView(R.layout.admin_activity_clientes);

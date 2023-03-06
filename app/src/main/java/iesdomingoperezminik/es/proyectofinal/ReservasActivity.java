@@ -3,15 +3,21 @@ package iesdomingoperezminik.es.proyectofinal;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,6 +25,7 @@ import android.widget.TextView;
 import java.sql.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import iesdomingoperezminik.es.proyectofinal.adapters.ReservasAdapter;
 import iesdomingoperezminik.es.proyectofinal.dialogs.EditReservaDialog;
@@ -80,8 +87,59 @@ public class ReservasActivity extends MenuActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void init() {
+
+        CardView createReservaView = findViewById(R.id.create_reserva_view);
+        Button volverCreateButton = findViewById(R.id.volver_button_create_reserva);
+
+        CardView reservaActivaView = findViewById(R.id.reserva_activa_view);
+        Button volverActivaButton = findViewById(R.id.volver_button_activa);
+
+        Reserva r;
+
         if(!admins.contains(SessionHandler.getSessionEmail())) {
             setContentView(R.layout.activity_reservas);
+
+            if(handler.tieneReservaActiva(handler.getId(SessionHandler.getSessionEmail()))) {
+
+                TextView fechaEntrada = findViewById(R.id.fecha_entrada_row);
+                TextView fechaSalida = findViewById(R.id.fecha_salida_row);
+                TextView numHabitacion = findViewById(R.id.num_habitacion_row);
+
+                createReservaView.setVisibility(View.GONE);
+                volverCreateButton.setVisibility(View.GONE);
+                reservaActivaView.setVisibility(View.VISIBLE);
+                volverActivaButton.setVisibility(View.VISIBLE);
+
+                r = handler.getReserva(handler.getId(SessionHandler.getSessionEmail()));
+                fechaEntrada.setText(String.valueOf(r.getFechaEntrada()));
+                fechaSalida.setText(String.valueOf(r.getFechaSalida()));
+                numHabitacion.setText(String.valueOf(r.getNumHabitacion()));
+
+            } else {
+
+                ImageButton fechaEntradaButton = findViewById(R.id.fecha_entrada_button);
+                ImageButton fechaSalidaButton = findViewById(R.id.fecha_salida_button);
+                EditText numHabitacion = findViewById(R.id.num_habitacion_edittext);
+                Button aceptar = findViewById(R.id.aceptar_button_create_reserva);
+
+//                fechaEntradaButton.setOnClickListener(new DatePickerDialog(
+//                        getContext(),
+//                        R.style.MyDatePickerStyle,
+//                        new DatePickerDialog.OnDateSetListener() {
+//                            @Override
+//                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+//                                old.setFechaEntrada(LocalDate.of(year, monthOfYear + 1, dayOfMonth));
+//                            }
+//                        },
+//                        Calendar.getInstance().get(Calendar.YEAR),
+//                        Calendar.getInstance().get(Calendar.MONTH),
+//                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+//                );
+//
+//                datePickerDialog.show();
+//            });
+
+            }
 
         } else {
             setContentView(R.layout.admin_activity_reservas);

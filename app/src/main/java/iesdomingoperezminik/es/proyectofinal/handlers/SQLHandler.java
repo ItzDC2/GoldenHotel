@@ -5,7 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Build;
 import android.se.omapi.Session;
+
+import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -168,7 +171,7 @@ public class SQLHandler extends SQLiteOpenHelper {
         String res = null;
         Cursor c = db.rawQuery("SELECT nombre, apellidos FROM Clientes WHERE Email = ?", new String[] { email });
         if(c.moveToFirst())
-            res = c.getString(c.getColumnIndex("nombre")) + " " + c.getString(c.getColumnIndex("apellidos"));
+            res = String.format("%s %s", c.getString(c.getColumnIndex("nombre")), c.getString(c.getColumnIndex("apellidos")));
         c.close();
         return res;
     }
@@ -191,6 +194,19 @@ public class SQLHandler extends SQLiteOpenHelper {
     public void updateReservas(Reserva old, Reserva newReserva) {
         db.execSQL(String.format("UPDATE Reservas SET id_cliente = '%s', numHabitacion = '%s', fecha_entrada = '%s', fecha_salida = '%s' WHERE id = '%d'", newReserva.getId_cliente(), newReserva.getNumHabitacion(),
                 newReserva.getFechaEntrada(), newReserva.getFechaSalida(), old.getId()));
+    }
+
+    @SuppressLint("Range")
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public Reserva getReserva(int id_cliente) {
+        Reserva r = new Reserva();
+        Cursor c = db.rawQuery("SELECT * FROM Reservas WHERE id_cliente = ?", new String[] { String.valueOf(id_cliente) });
+        if(c.moveToFirst()) {
+            r.setFechaEntrada(LocalDate.parse(c.getString(c.getColumnIndex("fecha_entrada"))));
+            r.setFechaSalida(LocalDate.parse(c.getString(c.getColumnIndex("fecha_salida"))));
+            r.setNumHabitacion(c.getInt(c.getColumnIndex("numHabitacion")));
+        }
+        return r;
     }
 
 }

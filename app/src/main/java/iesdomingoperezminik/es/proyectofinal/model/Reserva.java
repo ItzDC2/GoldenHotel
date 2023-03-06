@@ -14,6 +14,8 @@ public class Reserva {
     private String apellidosCliente;
     private String emailCliente;
 
+    public Reserva() {}
+
     public Reserva(int id, int id_cliente, int numHabitacion, LocalDate fechaEntrada, LocalDate fechaSalida) {
         if(fechaEntrada == null || fechaSalida == null)
             throw new NullPointerException("Algún parámetro de creación de la reserva es nulo.");

@@ -65,7 +65,7 @@ public class MainActivity extends MenuActivity {
             nav.getMenu().findItem(R.id.nav_item_reservas).setVisible(true);
 
             if(getIntent().getStringExtra("name_surname") != null && getIntent().getStringExtra("email_usuario") != null) {
-                nameSurname.setText(handler.existeAdmin(getIntent().getStringExtra("email_usuario")) ? "(ADMIN) " + getIntent().getStringExtra("name_surname") : getIntent().getStringExtra("name_username"));
+                nameSurname.setText(handler.existeAdmin(getIntent().getStringExtra("email_usuario")) ? "(ADMIN) " + getIntent().getStringExtra("name_surname") : getIntent().getStringExtra("name_surname"));
                 email.setText(getIntent().getStringExtra("email_usuario"));
             }
         }

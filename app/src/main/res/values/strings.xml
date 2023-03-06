@@ -102,5 +102,9 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="volver">volver</string>
+    <string name="create_reserva_fecha_entrada">Fecha de Entrada</string>
+    <string name="create_reserva_fecha_salida">Fecha de Salida</string>
+    <string name="cancelar">cancelar</string>
+    <string name="num_habitacion_hint">Escribe el número de la habitación</string>
 
 </resources>
