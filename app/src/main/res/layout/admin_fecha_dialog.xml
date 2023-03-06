@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <DatePicker
+        android:id="@+id/admin_fecha_date_picker"
+        android:layout_width="wrap_content"
+        android:headerBackground="@color/primaryColor"
+        android:calendarTextColor="@color/primaryColor"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

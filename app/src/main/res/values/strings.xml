@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">GoldenCrown</string>
+    <string name="title">GoldenCrown</string>
+    <string name="subtitle">Hotel</string>
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="menu_clientes">Clientes</string>
+    <string name="menu_reservas">Reservas</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_login">Login</string>
+    <string name="menu_logout">Cerrar sesión</string>
+    <string name="menu_settings">Ajustes</string>
+
+    <string name="default_name">¡Inicia sesión!</string>
+    <string name="default_email">Inicia sesión con tu email</string>
+    <string name="empezar_button">EMPEZAR</string>
+
+    <string name="title_spa">SPA</string>
+    <string name="title_restaurante">Restaurante</string>
+    <string name="title_habitaciones">Habitaciones</string>
+
+    <string name="frase_spa">Prueba nuestro nuevo SPA, una experiencia sin igual.</string>
+    <string name="frase_restaurante">¡Con nuestro equipo en cocina, nunca tendrás hambre, ellos se ocuparán de que todo quede la mar de delicoso!</string>
+    <string name="frase_habitaciones">En nuestras habitaciones, podrás descansar después de un día de diversión con nuestro equipo de animación, posee una insonorización
+        bilateral en la que nada podrá arruinarte ese momento de paz del día.
+    </string>
+
+    <string name="login_title">¡Inicia sesión!</string>
+    <string name="login_email">Email:</string>
+    <string name="login_passwd">Contraseña:</string>
+    <string name="login_button_title">Acceder</string>
+    <string name="login_no_registrado">¿No tienes cuenta todavía? Créate una <a href="register">aquí</a>.</string>
+    <string name="login_successfull">¡Has iniciado sesión correctamente!</string>
+
+    <string name="register_title">¡Regístrate!</string>
+    <string name="register_email">Email:</string>
+    <string name="register_passwd">Contraseña:</string>
+    <string name="register_confirm_passwd">Repita la contraseña:</string>
+    <string name="register_button_title">¡Regístrate!</string>
+    <string name="register_ya_registrado">¿Ya estás registrado? Haz click <a href="login">aquí</a> para iniciar sesión.</string>
+    <string name="register_name">Nombre:</string>
+    <string name="register_surname">Apellidos:</string>
+    <string name="register_successfull">¡Te has registrado correctamente!</string>
+
+    <string name="empty_name">El nombre está vacío.</string>
+    <string name="empty_surname">El apellido está vacío.</string>
+    <string name="empty_email">El email está vacío.</string>
+    <string name="empty_password">La contraseña está vacía.</string>
+    <string name="email_already_in_use">Ese email ya está en uso.</string>
+    <string name="invalid_email">El email contiene un formato erróneo.</string>
+    <string name="password_mismatch">Las contraseñas no coinciden.</string>
+    <string name="password_length">La contraseña es demasiado corta.</string>
+    <string name="invalid_password">La contraseña no es correcta.</string>
+    <string name="email_not_found">Email no registrado en la base de datos.</string>
+
+    <string name="options_clientes_editar">Editar</string>
+    <string name="options_clientes_elimimar">Eliminar</string>
+    <string name="options_clientes_cambiar_passwd">Cambiar contraseña</string>
+    <string name="admin_clientes_title">Administración de clientes</string>
+    <string name="clientes_not_found">¡No hay clientes registrados!</string>
+
+    <string name="default_admin_clientes_name_hint">Escribe el nombre de la persona</string>
+    <string name="button_aceptar_mod_cliente_title">Aceptar</string>
+    <string name="default_admin_clientes_surname_hint">Escribe los apellidos de la persona</string>
+    <string name="default_admin_clientes_email_hint">Escribe el email de la persona</string>
+    <string name="default_blank_not_use">Cualquier campo en blanco significa que no se quiere modificar</string>
+    <string name="default_admin_clientes_password_hint">Escriba la contraseña de la persona</string>
+
+    <string name="update_successfull">¡Se ha actualizado los datos correctamente!</string>
+
+    <string name="default_name_with_surname">DEFAULT NAME WITH SURNAME</string>
+    <string name="admin_default_email">DEFAULT EMAIL</string>
+    <string name="default_password">DEFAULT PASSWORD</string>
+    <string name="default_reserva">TIENE RESERVA ACTIVA: SI</string>
+    <string name="default_enter_date">DEFAULT ENTER DATE</string>
+    <string name="default_leave_date">DEFAULT LEAVE DATE</string>
+
+    <string name="default_create_clientes_name">EDITAR NOMBRE</string>
+    <string name="default_create_clientes_surname">EDITAR APELLIDOS</string>
+    <string name="default_create_clientes_email">EDITAR EMAIL</string>
+    <string name="default_create_clientes_password">EDITAR PASSWORD</string>
+
+    <string name="admin_reservas_title">Administración de reservas</string>
+    <string name="reservas_not_found">¡No hay reservas todavía!</string>
+    <string name="default_create_reservas_name">EDITAR NOMBRE</string>
+    <string name="default_create_reservas_surname">EDITAR APELLIDOS</string>
+    <string name="default_create_reservas_email">EDITAR EMAIL</string>
+    <string name="default_create_reservas_enter_date">EDITAR FECHA DE ENTRADA</string>
+    <string name="default_create_reservas_leave_date">EDITAR FECHA DE SALIDA</string>
+    <string name="admin_reservas_default_room_row">-1</string>
+
+    <string name="admin_reservas_show_fecha_entrada_button">Cambiar fecha de entrada</string>
+    <string name="admin_reservas_show_fecha_salida_button">Cambiar fecha de salida</string>
+    <string name="admin_reservas_show_hora_button">Elegir hora</string>
+
+    <string name="tab_metrics">Resolución</string>
+    <string name="tab_grabadora">Grabadora</string>
+    <string name="tab_bateria">Batería</string>
+    <string name="tab_luz">Luz Ambiental</string>
+    <string name="tab_network">Network</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="volver">volver</string>
+
+</resources>

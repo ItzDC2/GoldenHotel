@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_drawer"
+    tools:context="com.example.ComponentesMaterialDesign.MainActivity">
+    <group>
+        <item android:id="@+id/nav_item_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home"/>
+    </group>
+    <item android:id="@+id/nav_item_login"
+        android:icon="@drawable/ic_key"
+        android:title="@string/menu_login"/>
+    <item android:id="@+id/nav_item_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/menu_logout"/>
+    <group>
+        <item android:id="@+id/nav_item_clientes"
+            android:icon="@drawable/ic_person"
+            android:title="@string/menu_clientes" />
+        <item android:id="@+id/nav_item_reservas"
+            android:icon="@drawable/ic_reservas"
+            android:title="@string/menu_reservas" />
+    </group>
+    <item android:id="@+id/nav_item_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/menu_settings"/>
+</menu>
